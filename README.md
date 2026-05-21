@@ -123,68 +123,116 @@ Contoh:
 Tujuan tahap ini adalah mempermudah interpretasi hasil analisis.
 
 ---
+# Hasil Analisis dan Pembahasan
 
-# 3. Statistik Deskriptif
+# 1. Statistik Deskriptif
 
-Statistik deskriptif dilakukan menggunakan:
+Analisis statistik deskriptif dilakukan untuk melihat gambaran umum jawaban responden terhadap setiap indikator kepuasan fasilitas WiFi dan internet di FMIPA Universitas Mataram.
 
-```r
-summary(wifi)
-describe(wifi)
-```
+Tabel berikut menunjukkan nilai minimum, maksimum, median, dan rata-rata setiap indikator.
 
-Analisis ini menghasilkan:
-- nilai minimum,
-- maksimum,
-- mean,
-- median,
-- standar deviasi.
+| Indikator | Min | Median | Mean | Max |
+|---|---|---|---|---|
+| Akses_Mudah | 1 | 3 | 3.548 | 5 |
+| Internet_Cepat | 1 | 3 | 3.161 | 5 |
+| Koneksi_Stabil | 1 | 3 | 3.129 | 5 |
+| Membantu_Kuliah | 1 | 4 | 3.677 | 5 |
+| Internet_Jam_Kuliah | 1 | 3 | 3.452 | 5 |
+| Gangguan_Jarang | 1 | 3 | 2.613 | 4 |
+| Kualitas_Baik | 1 | 3 | 3.097 | 5 |
+| Internet_Luar_Jam | 1 | 3 | 3.387 | 5 |
+| Sesuai_Kebutuhan | 1 | 4 | 3.452 | 5 |
 
-Interpretasi:
-- Mean yang tinggi menunjukkan tingkat kepuasan mahasiswa yang tinggi.
-- Standar deviasi menunjukkan tingkat keragaman jawaban responden.
+## Interpretasi Statistik Deskriptif
 
----
+Hasil statistik deskriptif menunjukkan bahwa sebagian besar indikator memiliki nilai rata-rata di atas 3. Hal ini menunjukkan bahwa mahasiswa cenderung memberikan penilaian cukup baik terhadap fasilitas WiFi dan internet di FMIPA Universitas Mataram.
 
-# 4. Rata-rata Tiap Indikator
+Indikator dengan nilai rata-rata tertinggi adalah **Membantu_Kuliah** sebesar 3,677. Hasil ini menunjukkan bahwa mahasiswa merasa fasilitas internet cukup membantu dalam menunjang kegiatan perkuliahan dan aktivitas akademik.
 
-Rata-rata dihitung menggunakan:
+Indikator **Akses_Mudah**, **Internet_Jam_Kuliah**, dan **Sesuai_Kebutuhan** juga memiliki rata-rata yang cukup tinggi, yaitu di atas 3,4. Kondisi ini menunjukkan bahwa mahasiswa merasa akses internet cukup mudah digunakan dan mampu memenuhi kebutuhan akademik mereka.
 
-```r
-colMeans(wifi)
-```
+Indikator dengan nilai rata-rata terendah adalah **Gangguan_Jarang** sebesar 2,613. Nilai ini menunjukkan bahwa mahasiswa masih merasakan adanya gangguan atau ketidakstabilan jaringan internet selama penggunaan WiFi kampus.
 
-Hasil rata-rata digunakan untuk mengetahui indikator mana yang memperoleh penilaian tertinggi dan terendah dari mahasiswa.
-
-Visualisasi dilakukan menggunakan diagram batang agar lebih mudah dibandingkan antar indikator.
-
-Interpretasi:
-- Indikator dengan mean tertinggi menunjukkan aspek layanan internet yang paling memuaskan.
-- Indikator dengan mean rendah menunjukkan aspek yang perlu diperbaiki.
+Nilai minimum sebesar 1 pada seluruh indikator menunjukkan terdapat responden yang memberikan penilaian sangat rendah terhadap layanan internet. Nilai maksimum sebesar 5 menunjukkan terdapat responden yang merasa sangat puas terhadap fasilitas internet yang tersedia.
 
 ---
 
-# 5. Uji Validitas
+# 2. Rata-rata Tiap Indikator
 
-Uji validitas dilakukan menggunakan korelasi item-total.
+Rata-rata tiap indikator digunakan untuk mengetahui tingkat kepuasan mahasiswa pada masing-masing aspek layanan WiFi dan internet.
 
-```r
-cor(
-  wifi[, i],
-  rowSums(wifi[, -i])
-)
+| Indikator | Mean |
+|---|---|
+| Akses_Mudah | 3.548 |
+| Internet_Cepat | 3.161 |
+| Koneksi_Stabil | 3.129 |
+| Membantu_Kuliah | 3.677 |
+| Internet_Jam_Kuliah | 3.452 |
+| Gangguan_Jarang | 2.613 |
+| Kualitas_Baik | 3.097 |
+| Internet_Luar_Jam | 3.387 |
+| Sesuai_Kebutuhan | 3.452 |
+
+## Histogram Rata-rata Indikator
+
+```text
+Membantu_Kuliah         ████████████████████ 3.677
+Akses_Mudah             ██████████████████   3.548
+Internet_Jam_Kuliah     █████████████████    3.452
+Sesuai_Kebutuhan        █████████████████    3.452
+Internet_Luar_Jam       ████████████████     3.387
+Internet_Cepat          ██████████████       3.161
+Koneksi_Stabil          █████████████        3.129
+Kualitas_Baik           █████████████        3.097
+Gangguan_Jarang         ███████████          2.613
 ```
 
-Kriteria:
-- r hitung > 0,30 → item valid
-- r hitung ≤ 0,30 → item tidak valid
+## Interpretasi Rata-rata Indikator
 
-Interpretasi:
-- Item valid berarti pertanyaan mampu mengukur kepuasan mahasiswa dengan baik.
-- Semakin tinggi nilai korelasi, semakin baik kualitas item pertanyaan.
+Berdasarkan nilai rata-rata indikator, mahasiswa memberikan penilaian paling tinggi terhadap indikator **Membantu_Kuliah**. Hasil ini menunjukkan bahwa keberadaan WiFi kampus dinilai cukup membantu proses pembelajaran mahasiswa Statistika FMIPA Universitas Mataram.
+
+Indikator **Akses_Mudah** juga memperoleh nilai tinggi. Kondisi ini menunjukkan bahwa mahasiswa merasa cukup mudah dalam mengakses jaringan WiFi kampus.
+
+Indikator **Gangguan_Jarang** memperoleh nilai rata-rata paling rendah dibanding indikator lainnya. Hal ini menunjukkan bahwa mahasiswa masih cukup sering mengalami gangguan jaringan internet selama penggunaan WiFi.
+
+Secara umum seluruh indikator memiliki rata-rata di atas 3, sehingga dapat disimpulkan bahwa tingkat kepuasan mahasiswa terhadap fasilitas WiFi dan internet FMIPA Universitas Mataram tergolong cukup baik.
 
 ---
-# 6. Hasil Uji Reliabilitas
+
+# 3. Uji Validitas
+
+Uji validitas dilakukan untuk mengetahui apakah setiap item pertanyaan mampu mengukur kepuasan mahasiswa dengan baik.
+
+Kriteria pengujian:
+- r hitung > 0,30 → Valid
+- r hitung ≤ 0,30 → Tidak Valid
+
+| Item | r hitung | Keputusan |
+|---|---|---|
+| Akses_Mudah | 0.668 | Valid |
+| Internet_Cepat | 0.840 | Valid |
+| Koneksi_Stabil | 0.798 | Valid |
+| Membantu_Kuliah | 0.839 | Valid |
+| Internet_Jam_Kuliah | 0.784 | Valid |
+| Gangguan_Jarang | 0.347 | Valid |
+| Kualitas_Baik | 0.790 | Valid |
+| Internet_Luar_Jam | 0.724 | Valid |
+| Sesuai_Kebutuhan | 0.807 | Valid |
+
+## Interpretasi Uji Validitas
+
+Hasil uji validitas menunjukkan bahwa seluruh item pertanyaan memiliki nilai r hitung lebih besar dari 0,30. Hasil ini menunjukkan bahwa seluruh item kuesioner dinyatakan valid dan mampu mengukur tingkat kepuasan mahasiswa terhadap fasilitas WiFi dan internet di FMIPA Universitas Mataram.
+
+Indikator dengan nilai validitas tertinggi adalah **Internet_Cepat** sebesar 0,840. Hasil ini menunjukkan bahwa indikator kecepatan internet memiliki hubungan yang sangat kuat terhadap total skor kepuasan mahasiswa.
+
+Indikator **Membantu_Kuliah** dan **Sesuai_Kebutuhan** juga memiliki nilai korelasi yang tinggi. Kondisi ini menunjukkan bahwa kedua indikator tersebut sangat berpengaruh dalam mengukur kepuasan mahasiswa terhadap layanan internet kampus.
+
+Indikator dengan nilai validitas paling rendah adalah **Gangguan_Jarang** sebesar 0,347. Meskipun demikian, nilai tersebut masih berada di atas batas minimum validitas sehingga item tetap dinyatakan valid.
+
+Secara keseluruhan, instrumen penelitian dapat digunakan untuk analisis lebih lanjut karena seluruh item telah memenuhi syarat validitas.
+
+---
+# 4. Hasil Uji Reliabilitas
 
 Hasil uji reliabilitas menggunakan Cronbach’s Alpha diperoleh nilai sebesar 0,92.
 
@@ -205,6 +253,202 @@ Berdasarkan kriteria reliabilitas:
 
 Karena nilai alpha lebih besar dari 0,90, maka seluruh item pertanyaan pada kuesioner dinyatakan sangat reliabel dan memiliki konsistensi internal yang sangat baik dalam mengukur kepuasan mahasiswa terhadap fasilitas WiFi dan internet di FMIPA Universitas Mataram.
 
+# 5. Korelasi Antar Indikator
+
+Analisis korelasi dilakukan untuk melihat hubungan antar indikator kepuasan mahasiswa terhadap fasilitas WiFi dan internet di FMIPA Universitas Mataram.
+
+Visualisasi korelasi ditampilkan menggunakan `corrplot`, dimana:
+- warna biru tua menunjukkan korelasi positif yang kuat,
+- warna biru muda menunjukkan korelasi positif yang lebih lemah,
+- warna mendekati putih menunjukkan hubungan yang rendah.
+
+## Interpretasi Korelasi
+
+Berdasarkan heatmap korelasi, sebagian besar indikator memiliki hubungan positif antar variabel. Hasil ini menunjukkan bahwa peningkatan kualitas pada satu aspek layanan internet cenderung diikuti oleh peningkatan kepuasan pada aspek lainnya.
+
+Indikator **Internet_Cepat**, **Koneksi_Stabil**, dan **Membantu_Kuliah** memiliki korelasi yang cukup kuat. Kondisi ini menunjukkan bahwa kecepatan dan kestabilan internet sangat berpengaruh terhadap efektivitas penggunaan internet dalam menunjang kegiatan perkuliahan mahasiswa.
+
+Indikator **Akses_Mudah** juga memiliki hubungan positif dengan sebagian besar indikator lainnya. Hasil ini menunjukkan bahwa kemudahan akses WiFi berkontribusi terhadap tingkat kepuasan mahasiswa secara umum.
+
+Indikator **Gangguan_Jarang** terlihat memiliki korelasi yang lebih rendah dibanding indikator lain. Kondisi ini menunjukkan bahwa mahasiswa masih mengalami gangguan jaringan yang mempengaruhi persepsi kepuasan terhadap layanan internet.
+
+Korelasi yang dominan positif menunjukkan bahwa kualitas layanan WiFi dan internet di FMIPA Universitas Mataram saling berkaitan antar indikator. Semakin baik kualitas jaringan internet, maka tingkat kepuasan mahasiswa juga cenderung meningkat.
+
+Secara keseluruhan, hasil korelasi menunjukkan bahwa indikator-indikator dalam penelitian memiliki hubungan yang cukup baik dalam mengukur kepuasan mahasiswa terhadap fasilitas WiFi dan internet.
+
+# 6. Visualisasi Skala Likert
+
+Visualisasi skala Likert digunakan untuk melihat distribusi jawaban responden terhadap setiap indikator kepuasan fasilitas WiFi dan internet di FMIPA Universitas Mataram.
+
+Kategori jawaban terdiri dari:
+- STS = Sangat Tidak Setuju
+- TS = Tidak Setuju
+- N = Netral
+- S = Setuju
+- SS = Sangat Setuju
+
+Diagram menunjukkan persentase jawaban responden pada masing-masing indikator.
+
+## Interpretasi Visualisasi Likert
+
+Berdasarkan diagram Likert, sebagian besar responden memberikan jawaban pada kategori **Setuju (S)** dan **Sangat Setuju (SS)** terhadap beberapa indikator layanan WiFi dan internet FMIPA Universitas Mataram.
+
+Indikator **Membantu_Kuliah** memperoleh persentase tertinggi pada kategori positif. Sebanyak 61% responden memberikan jawaban **Sangat Setuju**, sedangkan 35% memberikan jawaban **Setuju**. Hasil ini menunjukkan bahwa fasilitas internet sangat membantu mahasiswa dalam kegiatan perkuliahan dan aktivitas akademik.
+
+Indikator **Sesuai_Kebutuhan** juga menunjukkan tingkat kepuasan yang tinggi. Sebanyak 52% responden menjawab **Sangat Setuju** dan 35% menjawab **Setuju**. Kondisi ini menunjukkan bahwa layanan internet kampus dinilai cukup mampu memenuhi kebutuhan mahasiswa.
+
+Indikator **Akses_Mudah**, **Internet_Luar_Jam**, dan **Internet_Jam_Kuliah** juga memperoleh dominasi jawaban positif pada kategori **Setuju** dan **Sangat Setuju**. Hasil ini menunjukkan bahwa mahasiswa merasa akses WiFi cukup mudah digunakan baik saat jam kuliah maupun di luar jam perkuliahan.
+
+Indikator **Internet_Cepat** dan **Koneksi_Stabil** memiliki persentase jawaban netral yang masih cukup besar. Kondisi ini menunjukkan bahwa sebagian mahasiswa merasa kualitas kecepatan dan kestabilan internet belum sepenuhnya optimal.
+
+Indikator dengan tingkat kepuasan paling rendah adalah **Gangguan_Jarang**. Sebanyak 35% responden memberikan jawaban **Sangat Tidak Setuju**, sedangkan hanya 10% yang menjawab **Sangat Setuju**. Hasil ini menunjukkan bahwa mahasiswa masih cukup sering mengalami gangguan jaringan internet selama menggunakan fasilitas WiFi kampus.
+
+Indikator **Kualitas_Baik** menunjukkan mayoritas jawaban berada pada kategori netral dan setuju. Kondisi ini menunjukkan bahwa kualitas internet dinilai cukup baik, tetapi masih terdapat beberapa aspek yang perlu ditingkatkan.
+
+Secara keseluruhan, visualisasi Likert menunjukkan bahwa mayoritas mahasiswa Statistika FMIPA Universitas Mataram merasa cukup puas terhadap fasilitas WiFi dan internet kampus, terutama dalam mendukung aktivitas akademik. Meskipun demikian, aspek kestabilan jaringan dan gangguan internet masih perlu mendapatkan perhatian lebih lanjut.
+
+# 10. Naive Estimation
+
+Naive estimation dilakukan menggunakan rata-rata langsung setiap indikator.
+
+```r
+colMeans(wifi[,1:9])
+```
+
+Karakteristik naive estimation:
+- tidak menggunakan pembobotan,
+- seluruh indikator dianggap memiliki kontribusi yang sama.
+
+Interpretasi:
+- Semakin tinggi nilai mean, semakin baik tingkat kepuasan mahasiswa terhadap indikator tersebut.
+
+---
+
+# 11. Weighted Estimation
+
+Weighted estimation dilakukan dengan menghitung bobot tiap indikator berdasarkan total skor.
+
+Rumus bobot:
+
+\[
+w_i = \frac{x_i}{\sum x_i}
+\]
+
+Tujuan:
+- memberikan pengaruh yang berbeda pada setiap indikator berdasarkan kontribusinya.
+
+Interpretasi:
+- Indikator dengan bobot besar memiliki kontribusi lebih besar terhadap kepuasan mahasiswa secara keseluruhan.
+
+---
+
+# 7. Perbandingan Naive Estimation dan Weighted Estimation
+
+Analisis perbandingan dilakukan untuk melihat perbedaan hasil estimasi tingkat kepuasan mahasiswa menggunakan dua metode, yaitu:
+- Naive Estimation
+- Weighted Estimation
+
+## Tabel Perbandingan Naive Estimation dan Weighted Estimation
+
+| Indikator | Naive Estimation | Bobot | Weighted Estimation |
+|---|---|---|---|
+| Akses_Mudah | 3.548 | 0.1202 | 0.4266 |
+| Internet_Cepat | 3.161 | 0.1071 | 0.3386 |
+| Koneksi_Stabil | 3.129 | 0.1060 | 0.3317 |
+| Membantu_Kuliah | 3.677 | 0.1246 | 0.4582 |
+| Internet_Jam_Kuliah | 3.452 | 0.1169 | 0.4036 |
+| Gangguan_Jarang | 2.613 | 0.0885 | 0.2313 |
+| Kualitas_Baik | 3.097 | 0.1049 | 0.3249 |
+| Internet_Luar_Jam | 3.387 | 0.1148 | 0.3887 |
+| Sesuai_Kebutuhan | 3.452 | 0.1169 | 0.4036 |
+
+## Penjelasan Metode
+
+### Naive Estimation
+Naive estimation merupakan metode estimasi sederhana yang menghitung rata-rata langsung dari setiap indikator tanpa memberikan bobot tertentu.
+
+Pada metode ini:
+- seluruh indikator dianggap memiliki kontribusi yang sama,
+- tidak ada penyesuaian berdasarkan tingkat pengaruh indikator.
+
+### Weighted Estimation
+Weighted estimation merupakan metode estimasi yang menggunakan pembobotan pada setiap indikator berdasarkan proporsi total skor.
+
+Pada metode ini:
+- indikator dengan kontribusi lebih besar akan memiliki bobot lebih tinggi,
+- hasil estimasi menjadi lebih proporsional.
+
+---
+
+# Interpretasi Grafik
+
+Berdasarkan grafik perbandingan, nilai **Naive Estimation** pada seluruh indikator terlihat lebih tinggi dibandingkan **Weighted Estimation**. Kondisi ini terjadi karena metode weighted estimation melakukan penyesuaian menggunakan bobot masing-masing indikator.
+
+Indikator **Membantu_Kuliah** memiliki nilai naive estimation tertinggi dibanding indikator lainnya. Hasil ini menunjukkan bahwa mahasiswa merasa fasilitas WiFi dan internet sangat membantu dalam proses pembelajaran dan aktivitas akademik.
+
+Indikator **Akses_Mudah**, **Internet_Jam_Kuliah**, dan **Sesuai_Kebutuhan** juga memiliki nilai estimasi yang cukup tinggi. Kondisi ini menunjukkan bahwa mahasiswa merasa akses internet cukup mudah digunakan dan sesuai dengan kebutuhan perkuliahan.
+
+Indikator **Gangguan_Jarang** memiliki nilai estimasi paling rendah baik pada naive estimation maupun weighted estimation. Hasil ini menunjukkan bahwa mahasiswa masih cukup sering mengalami gangguan jaringan internet selama menggunakan fasilitas WiFi kampus.
+
+Perbedaan antara naive estimation dan weighted estimation pada setiap indikator terlihat tidak terlalu besar. Kondisi ini menunjukkan bahwa distribusi bobot antar indikator relatif stabil dan tidak terdapat indikator yang memiliki pengaruh sangat dominan dibanding indikator lainnya.
+
+Weighted estimation menghasilkan nilai yang lebih kecil karena nilai rata-rata indikator dikalikan dengan bobot proporsional masing-masing indikator. Hasil ini memberikan estimasi yang lebih realistis terhadap kontribusi setiap indikator dalam membentuk kepuasan mahasiswa secara keseluruhan.
+
+Secara umum, kedua metode menunjukkan pola yang sama, dimana indikator yang memiliki tingkat kepuasan tinggi tetap berada pada posisi tertinggi, sedangkan indikator dengan tingkat kepuasan rendah tetap berada pada posisi terendah. Hasil ini menunjukkan konsistensi penilaian mahasiswa terhadap kualitas fasilitas WiFi dan internet di FMIPA Universitas Mataram.
+
+# 13. Distribusi Frekuensi Responden
+
+Distribusi frekuensi dihitung berdasarkan kategori kepuasan mahasiswa.
+
+Output:
+- frekuensi,
+- persentase,
+- grafik distribusi.
+
+Interpretasi:
+- Kategori dengan frekuensi terbesar menunjukkan tingkat kepuasan dominan mahasiswa terhadap fasilitas WiFi FMIPA.
+
+---
+
+# 14. Histogram Total Skor
+
+Histogram digunakan untuk melihat pola persebaran total skor responden.
+
+Interpretasi:
+- Distribusi yang terkonsentrasi pada skor tinggi menunjukkan mayoritas mahasiswa merasa puas.
+- Distribusi yang menyebar menunjukkan variasi tingkat kepuasan responden.
+
+---
+
+# 15. Perhitungan Slovin
+
+Rumus Slovin digunakan untuk menentukan jumlah sampel minimum penelitian.
+
+:contentReference[oaicite:0]{index=0}
+
+Keterangan:
+- \(N\) = jumlah populasi
+- \(e\) = margin of error
+
+Dengan:
+- Populasi = 52
+- Margin error = 10%
+
+Hasil perhitungan menunjukkan jumlah sampel minimum yang dibutuhkan dalam penelitian.
+
+---
+
+# 16. Persentase Error Penelitian
+
+Persentase error dihitung menggunakan:
+
+:contentReference[oaicite:1]{index=1}
+
+Interpretasi:
+- Semakin kecil nilai error, semakin baik representasi sampel terhadap populasi.
+- Nilai error sekitar 10%–15% masih umum digunakan dalam penelitian survei sederhana.
+
+---
 
 # Output yang Dihasilkan
 
