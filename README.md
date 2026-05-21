@@ -587,19 +587,3 @@ Penggunaan 31 responden dinilai sudah cukup representatif untuk menggambarkan ti
 Semakin besar jumlah sampel yang digunakan dibanding batas minimum Slovin, maka semakin baik kemampuan sampel dalam merepresentasikan kondisi populasi penelitian.
 
 Secara umum, hasil perhitungan Slovin menunjukkan bahwa data penelitian layak digunakan untuk analisis statistik lebih lanjut karena jumlah sampel telah memenuhi ketentuan ukuran sampel minimum penelitian.
-
-# Output yang Dihasilkan
-
-Project ini menghasilkan:
-- Statistik deskriptif
-- Tabel validitas
-- Tabel reliabilitas
-- Diagram batang indikator
-- Grafik Likert
-- Tabel naive estimation
-- Tabel weighted estimation
-- Tabel distribusi frekuensi
-- Histogram responden
-- Hasil Slovin
-- Persentase error penelitian
-
