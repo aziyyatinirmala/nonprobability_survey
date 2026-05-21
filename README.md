@@ -307,42 +307,113 @@ Indikator **Kualitas_Baik** menunjukkan mayoritas jawaban berada pada kategori n
 
 Secara keseluruhan, visualisasi Likert menunjukkan bahwa mayoritas mahasiswa Statistika FMIPA Universitas Mataram merasa cukup puas terhadap fasilitas WiFi dan internet kampus, terutama dalam mendukung aktivitas akademik. Meskipun demikian, aspek kestabilan jaringan dan gangguan internet masih perlu mendapatkan perhatian lebih lanjut.
 
-# 10. Naive Estimation
+# 7. Naive Estimation
 
-Naive estimation dilakukan menggunakan rata-rata langsung setiap indikator.
+Naive estimation digunakan untuk menghitung nilai rata-rata setiap indikator kepuasan mahasiswa tanpa memberikan bobot tertentu pada masing-masing indikator.
 
-```r
-colMeans(wifi[,1:9])
-```
-
-Karakteristik naive estimation:
-- tidak menggunakan pembobotan,
-- seluruh indikator dianggap memiliki kontribusi yang sama.
-
-Interpretasi:
-- Semakin tinggi nilai mean, semakin baik tingkat kepuasan mahasiswa terhadap indikator tersebut.
+Pada metode ini:
+- seluruh indikator dianggap memiliki kontribusi yang sama,
+- estimasi dilakukan menggunakan rata-rata langsung dari data responden.
 
 ---
 
-# 11. Weighted Estimation
+# Tabel Hasil Naive Estimation
 
-Weighted estimation dilakukan dengan menghitung bobot tiap indikator berdasarkan total skor.
-
-Rumus bobot:
-
-\[
-w_i = \frac{x_i}{\sum x_i}
-\]
-
-Tujuan:
-- memberikan pengaruh yang berbeda pada setiap indikator berdasarkan kontribusinya.
-
-Interpretasi:
-- Indikator dengan bobot besar memiliki kontribusi lebih besar terhadap kepuasan mahasiswa secara keseluruhan.
+| Indikator | Mean Naive |
+|---|---|
+| Akses_Mudah | 3.548 |
+| Internet_Cepat | 3.161 |
+| Koneksi_Stabil | 3.129 |
+| Membantu_Kuliah | 3.677 |
+| Internet_Jam_Kuliah | 3.452 |
+| Gangguan_Jarang | 2.613 |
+| Kualitas_Baik | 3.097 |
+| Internet_Luar_Jam | 3.387 |
+| Sesuai_Kebutuhan | 3.452 |
 
 ---
 
-# 7. Perbandingan Naive Estimation dan Weighted Estimation
+# Rata-rata Keseluruhan Naive Estimation
+
+| Statistik | Nilai |
+|---|---|
+| Mean Naive Total | 3.280 |
+
+---
+
+# Interpretasi Naive Estimation
+
+Berdasarkan hasil naive estimation, diperoleh rata-rata keseluruhan sebesar 3,280. Hasil ini menunjukkan bahwa tingkat kepuasan mahasiswa Statistika terhadap fasilitas WiFi dan internet di FMIPA Universitas Mataram berada pada kategori cukup baik.
+
+Indikator dengan nilai rata-rata tertinggi adalah **Membantu_Kuliah** sebesar 3,677. Hasil ini menunjukkan bahwa fasilitas internet kampus dinilai cukup membantu mahasiswa dalam menunjang proses pembelajaran dan aktivitas akademik.
+
+Indikator **Akses_Mudah**, **Internet_Jam_Kuliah**, dan **Sesuai_Kebutuhan** juga memiliki nilai rata-rata yang cukup tinggi. Kondisi ini menunjukkan bahwa mahasiswa merasa akses internet kampus cukup mudah digunakan serta mampu mendukung kebutuhan perkuliahan.
+
+Indikator dengan nilai rata-rata paling rendah adalah **Gangguan_Jarang** sebesar 2,613. Hasil ini menunjukkan bahwa mahasiswa masih cukup sering mengalami gangguan jaringan selama menggunakan fasilitas WiFi kampus.
+
+Nilai rata-rata pada sebagian besar indikator berada di atas angka 3. Kondisi ini menunjukkan bahwa persepsi mahasiswa terhadap kualitas layanan internet FMIPA Universitas Mataram cenderung positif meskipun masih terdapat beberapa aspek yang perlu ditingkatkan.
+
+Secara umum, hasil naive estimation menunjukkan bahwa fasilitas WiFi dan internet di FMIPA Universitas Mataram telah memberikan manfaat bagi mahasiswa, terutama dalam mendukung kegiatan akademik dan pembelajaran.
+
+# 8. Weighted Estimation
+
+Weighted estimation digunakan untuk menghitung estimasi kepuasan mahasiswa dengan memberikan bobot pada setiap indikator berdasarkan proporsi total skor masing-masing indikator.
+
+Pada metode ini:
+- indikator dengan kontribusi lebih besar akan memiliki bobot lebih tinggi,
+- hasil estimasi menjadi lebih proporsional dibanding naive estimation.
+
+Bobot dihitung menggunakan total skor setiap indikator dibanding total seluruh skor indikator.
+
+---
+
+# Tabel Bobot Indikator
+
+| Indikator | Bobot |
+|---|---|
+| Akses_Mudah | 0.1202 |
+| Internet_Cepat | 0.1071 |
+| Koneksi_Stabil | 0.1060 |
+| Membantu_Kuliah | 0.1246 |
+| Internet_Jam_Kuliah | 0.1169 |
+| Gangguan_Jarang | 0.0885 |
+| Kualitas_Baik | 0.1049 |
+| Internet_Luar_Jam | 0.1148 |
+| Sesuai_Kebutuhan | 0.1169 |
+
+---
+
+# Tabel Hasil Weighted Estimation
+
+| Indikator | Bobot | Mean Weighted |
+|---|---|---|
+| Akses_Mudah | 0.1202 | 0.4266 |
+| Internet_Cepat | 0.1071 | 0.3386 |
+| Koneksi_Stabil | 0.1060 | 0.3317 |
+| Membantu_Kuliah | 0.1246 | 0.4582 |
+| Internet_Jam_Kuliah | 0.1169 | 0.4036 |
+| Gangguan_Jarang | 0.0885 | 0.2313 |
+| Kualitas_Baik | 0.1049 | 0.3249 |
+| Internet_Luar_Jam | 0.1148 | 0.3887 |
+| Sesuai_Kebutuhan | 0.1169 | 0.4036 |
+
+---
+
+# Interpretasi Weighted Estimation
+
+Berdasarkan hasil weighted estimation, indikator **Membantu_Kuliah** memiliki bobot terbesar yaitu 0,1246 dan nilai weighted estimation tertinggi sebesar 0,4582. Hasil ini menunjukkan bahwa mahasiswa menilai fasilitas WiFi dan internet sangat berperan dalam membantu kegiatan perkuliahan dan aktivitas akademik.
+
+Indikator **Akses_Mudah**, **Internet_Jam_Kuliah**, dan **Sesuai_Kebutuhan** juga memiliki nilai weighted estimation yang cukup tinggi. Kondisi ini menunjukkan bahwa mahasiswa merasa akses internet kampus cukup mudah digunakan dan mampu mendukung kebutuhan pembelajaran.
+
+Indikator **Gangguan_Jarang** memiliki bobot paling rendah sebesar 0,0885 dan weighted estimation terendah sebesar 0,2313. Hasil ini menunjukkan bahwa gangguan jaringan masih menjadi salah satu kelemahan utama layanan internet di FMIPA Universitas Mataram.
+
+Perbedaan nilai weighted estimation antar indikator menunjukkan bahwa setiap indikator memiliki kontribusi yang berbeda dalam membentuk tingkat kepuasan mahasiswa secara keseluruhan.
+
+Indikator dengan bobot tinggi menunjukkan bahwa aspek tersebut lebih dominan dalam mempengaruhi kepuasan mahasiswa terhadap fasilitas WiFi dan internet kampus.
+
+Secara umum, hasil weighted estimation menunjukkan bahwa mahasiswa cukup puas terhadap fasilitas WiFi dan internet FMIPA Universitas Mataram, terutama dalam mendukung kegiatan akademik. Meskipun demikian, aspek kestabilan jaringan dan gangguan internet masih perlu ditingkatkan agar kualitas layanan menjadi lebih optimal.
+
+# 9. Perbandingan Naive Estimation dan Weighted Estimation
 
 Analisis perbandingan dilakukan untuk melihat perbedaan hasil estimasi tingkat kepuasan mahasiswa menggunakan dua metode, yaitu:
 - Naive Estimation
@@ -396,59 +467,126 @@ Weighted estimation menghasilkan nilai yang lebih kecil karena nilai rata-rata i
 
 Secara umum, kedua metode menunjukkan pola yang sama, dimana indikator yang memiliki tingkat kepuasan tinggi tetap berada pada posisi tertinggi, sedangkan indikator dengan tingkat kepuasan rendah tetap berada pada posisi terendah. Hasil ini menunjukkan konsistensi penilaian mahasiswa terhadap kualitas fasilitas WiFi dan internet di FMIPA Universitas Mataram.
 
-# 13. Distribusi Frekuensi Responden
+# 10. Distribusi Frekuensi Kepuasan Responden
 
-Distribusi frekuensi dihitung berdasarkan kategori kepuasan mahasiswa.
+Distribusi frekuensi digunakan untuk mengetahui jumlah responden pada setiap kategori tingkat kepuasan terhadap fasilitas WiFi dan internet di FMIPA Universitas Mataram.
 
-Output:
-- frekuensi,
-- persentase,
-- grafik distribusi.
+Kategori kepuasan dibagi menjadi:
+- Tidak Puas
+- Kurang Puas
+- Puas
+- Sangat Puas
 
-Interpretasi:
-- Kategori dengan frekuensi terbesar menunjukkan tingkat kepuasan dominan mahasiswa terhadap fasilitas WiFi FMIPA.
+## Tabel Distribusi Frekuensi Responden
 
----
-
-# 14. Histogram Total Skor
-
-Histogram digunakan untuk melihat pola persebaran total skor responden.
-
-Interpretasi:
-- Distribusi yang terkonsentrasi pada skor tinggi menunjukkan mayoritas mahasiswa merasa puas.
-- Distribusi yang menyebar menunjukkan variasi tingkat kepuasan responden.
+| Kategori | Frekuensi | Persentase (%) |
+|---|---|---|
+| Tidak Puas | 2 | 6,45 |
+| Kurang Puas | 15 | 48,39 |
+| Puas | 14 | 45,16 |
+| Sangat Puas | 0 | 0,00 |
 
 ---
 
-# 15. Perhitungan Slovin
+# Grafik Distribusi Frekuensi Responden
 
-Rumus Slovin digunakan untuk menentukan jumlah sampel minimum penelitian.
+Grafik distribusi frekuensi menunjukkan jumlah mahasiswa pada setiap kategori kepuasan.
+
+## Interpretasi Distribusi Frekuensi
+
+Berdasarkan tabel distribusi frekuensi, sebagian besar mahasiswa berada pada kategori **Kurang Puas** dengan jumlah 15 responden atau sebesar 48,39%.
+
+Kategori **Puas** berada pada posisi kedua dengan jumlah 14 responden atau sebesar 45,16%. Hasil ini menunjukkan bahwa meskipun sebagian mahasiswa merasa cukup puas terhadap fasilitas WiFi dan internet, masih terdapat banyak mahasiswa yang merasa layanan internet belum optimal.
+
+Kategori **Tidak Puas** terdiri dari 2 responden atau sebesar 6,45%. Hasil ini menunjukkan masih terdapat mahasiswa yang merasa kualitas layanan internet kurang memadai untuk mendukung aktivitas akademik.
+
+Kategori **Sangat Puas** tidak memiliki responden sama sekali. Kondisi ini menunjukkan bahwa belum terdapat mahasiswa yang merasa sangat puas terhadap fasilitas WiFi dan internet di FMIPA Universitas Mataram.
+
+Secara keseluruhan, distribusi frekuensi menunjukkan bahwa tingkat kepuasan mahasiswa masih berada pada kategori sedang dan belum mencapai tingkat kepuasan maksimal. Hasil ini menunjukkan bahwa kualitas layanan internet FMIPA Universitas Mataram masih memerlukan peningkatan, terutama pada aspek kestabilan jaringan dan gangguan internet.
+
+---
+
+# 11. Histogram Total Skor Responden
+
+Histogram digunakan untuk melihat pola persebaran total skor kepuasan mahasiswa terhadap fasilitas WiFi dan internet di FMIPA Universitas Mataram.
+
+Histogram menampilkan:
+- sebaran total skor responden,
+- frekuensi kemunculan skor,
+- pola distribusi kepuasan mahasiswa.
+
+## Interpretasi Histogram
+
+Berdasarkan histogram total skor responden, sebagian besar mahasiswa memiliki skor kepuasan pada kategori menengah hingga tinggi. Kondisi ini menunjukkan bahwa mayoritas mahasiswa memberikan penilaian cukup baik terhadap fasilitas WiFi dan internet kampus.
+
+Sebaran skor terlihat terkonsentrasi pada rentang skor kategori **Kurang Puas** dan **Puas**. Hasil ini sejalan dengan distribusi frekuensi sebelumnya yang menunjukkan dominasi responden pada kedua kategori tersebut.
+
+Tidak terdapat konsentrasi skor yang sangat tinggi pada kategori **Sangat Puas**. Kondisi ini menunjukkan bahwa kualitas layanan internet FMIPA Universitas Mataram masih belum sepenuhnya memenuhi harapan mahasiswa.
+
+Histogram juga menunjukkan adanya variasi jawaban antar responden. Sebagian mahasiswa merasa cukup puas terhadap layanan internet, sedangkan sebagian lainnya masih mengalami kendala terutama pada kestabilan jaringan dan gangguan internet.
+
+Secara umum, histogram menunjukkan bahwa tingkat kepuasan mahasiswa terhadap fasilitas WiFi dan internet FMIPA Universitas Mataram berada pada tingkat sedang dan masih memerlukan peningkatan kualitas layanan.
+
+# 12. Perhitungan Ukuran Sampel Menggunakan Rumus Slovin
+
+Rumus Slovin digunakan untuk menentukan jumlah sampel minimum yang diperlukan dalam penelitian berdasarkan jumlah populasi dan tingkat kesalahan (margin of error).
+
+Pada penelitian ini:
+- Jumlah populasi (\(N\)) = 52 mahasiswa
+- Margin of error (\(e\)) = 12% atau 0,12
+
+Rumus Slovin yang digunakan:
 
 :contentReference[oaicite:0]{index=0}
 
 Keterangan:
+- \(n\) = jumlah sampel
 - \(N\) = jumlah populasi
 - \(e\) = margin of error
 
-Dengan:
-- Populasi = 52
-- Margin error = 10%
-
-Hasil perhitungan menunjukkan jumlah sampel minimum yang dibutuhkan dalam penelitian.
-
 ---
 
-# 16. Persentase Error Penelitian
+# Substitusi Perhitungan Slovin
 
-Persentase error dihitung menggunakan:
+Perhitungan jumlah sampel dilakukan sebagai berikut:
 
 :contentReference[oaicite:1]{index=1}
 
-Interpretasi:
-- Semakin kecil nilai error, semakin baik representasi sampel terhadap populasi.
-- Nilai error sekitar 10%–15% masih umum digunakan dalam penelitian survei sederhana.
+Hasil perhitungan:
+
+\[
+n = 29.73
+\]
+
+Hasil tersebut kemudian dibulatkan menjadi:
+
+\[
+n = 30
+\]
 
 ---
+
+# Tabel Hasil Perhitungan Slovin
+
+| Populasi | Margin Error | Sampel Slovin | Sampel Dibutuhkan | Sampel Penelitian |
+|---|---|---|---|---|
+| 52 | 0,12 | 29,73 | 30 | 31 |
+
+---
+
+# Interpretasi Perhitungan Slovin
+
+Berdasarkan hasil perhitungan menggunakan rumus Slovin, jumlah sampel minimum yang dibutuhkan dalam penelitian adalah sebanyak 30 responden.
+
+Penelitian ini menggunakan 31 responden dari total populasi 52 mahasiswa. Jumlah tersebut lebih besar dibanding jumlah sampel minimum hasil perhitungan Slovin.
+
+Hasil ini menunjukkan bahwa jumlah sampel penelitian telah memenuhi syarat minimum pengambilan sampel berdasarkan rumus Slovin dengan margin of error sebesar 12%.
+
+Penggunaan 31 responden dinilai sudah cukup representatif untuk menggambarkan tingkat kepuasan mahasiswa Statistika terhadap fasilitas WiFi dan internet di FMIPA Universitas Mataram.
+
+Semakin besar jumlah sampel yang digunakan dibanding batas minimum Slovin, maka semakin baik kemampuan sampel dalam merepresentasikan kondisi populasi penelitian.
+
+Secara umum, hasil perhitungan Slovin menunjukkan bahwa data penelitian layak digunakan untuk analisis statistik lebih lanjut karena jumlah sampel telah memenuhi ketentuan ukuran sampel minimum penelitian.
 
 # Output yang Dihasilkan
 
